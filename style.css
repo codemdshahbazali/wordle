@@ -44,10 +44,12 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 4px;
 }
 
 .row {
   display: flex;
+  gap: 4px;
 }
 
 .tile {
@@ -57,6 +59,8 @@ body {
   width: 60px;
   height: 60px;
   border: 1px solid var(--white);
+  font-weight: 700;
+  font-size: 1.2rem;
 }
 
 .keyboard-container {
