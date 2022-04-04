@@ -239,9 +239,9 @@ hr {
   }
 
   .keyboard-container button {
-    width: 25px;
+    width: 23px;
     height: 40px;
-    margin: 1px;
+    margin: 2px;
     font-size: 0.8rem;
   }
 
