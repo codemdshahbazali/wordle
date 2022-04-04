@@ -629,6 +629,8 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+let checkWordFlag = true;
+
 const addTextToContainer = (key) => {
   let element = document.querySelector(`#row-${rowNumber}-col-${colNumber}`);
   if (
@@ -645,7 +647,7 @@ const addTextToContainer = (key) => {
   }
 
   if (key.toLowerCase() == 'enter') {
-    if (colNumber > 0) checkWord();
+    if (colNumber > 0 && checkWordFlag) checkWord();
   }
 
   if (key == '<<' || key.toLowerCase() == 'backspace') {
@@ -658,6 +660,7 @@ const addTextToContainer = (key) => {
 };
 
 const checkWord = async () => {
+  checkWordFlag = false;
   const wordList = document.querySelector(`#row-${rowNumber}`).childNodes;
   let word = '';
   let element;
@@ -672,7 +675,9 @@ const checkWord = async () => {
     setTimeout(() => {
       gameMessage.textContent = '';
       gameMessage.classList.remove('animate-message');
+      checkWordFlag = true;
     }, 2000);
+
     return;
   }
   //start
@@ -693,11 +698,11 @@ const checkWord = async () => {
             modelText.textContent = 'Congratulations. Play Again !!!';
             rowNumber++;
             colNumber = 0;
+            checkWordFlag = true;
+            return;
           }
         }, 300 * i);
       }
-
-      return;
     } else {
       for (let i = 0; i < word.length; i++) {
         setTimeout(() => {
@@ -722,12 +727,14 @@ const checkWord = async () => {
             setTimeout(() => {
               rowNumber++;
               colNumber = 0;
+              checkWordFlag = true;
               if (rowNumber === 6) {
                 gameMessage.textContent = winWord.toUpperCase();
                 gameMessage.classList.add('animate-message');
                 myModal.show();
                 modelText.classList.add('text-danger');
                 modelText.textContent = 'Game Over. Try Again!!!';
+                checkWordFlag = true;
                 return;
               }
             }, i * 200);
@@ -741,6 +748,7 @@ const checkWord = async () => {
     setTimeout(() => {
       gameMessage.textContent = '';
       gameMessage.classList.remove('animate-message');
+      checkWordFlag = true;
     }, 2000);
   }
   //end
