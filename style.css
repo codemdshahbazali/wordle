@@ -205,7 +205,7 @@ hr {
   }
 }
 
-@media (min-width: 480px) and (max-width: 580px) {
+@media (min-width: 410px) and (max-width: 580px) {
   .tile {
     width: 50px;
     height: 50px;
@@ -228,7 +228,7 @@ hr {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 410px) {
   .tile {
     width: 40px;
     height: 40px;
