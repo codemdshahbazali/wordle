@@ -24,19 +24,78 @@
 body {
   font-family: var(--main-font-family), sans-serif;
   background-color: var(--black);
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  overflow: hidden;
+}
+
+#exampleModalLabel,
+#modalText,
+#staticBackdropLabel {
+  /* color: var(--darkendGreen) !important; */
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin: auto;
+}
+
+.modal-body li {
+  color: var(--darkGray);
+  font-size: 1.2rem;
+  line-height: 1.4 !important;
+  margin-top: 15px;
+}
+
+.game-message {
+  font-size: 2rem;
+  padding: 0.4em 0.6em;
+  border-radius: 0.3em;
+  color: var(--darkGray);
+  font-weight: 700;
+}
+
+.animate-message {
+  background-color: var(--white);
+  animation: animateMessage 1s ease-in-out;
+}
+
+@keyframes animateMessage {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 .game-title {
-  margin: 20px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .game-title h1 {
   text-align: center;
+  font-size: 2.5rem;
+  flex-grow: 1;
+}
+
+.game-title i {
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid rgb(59, 59, 59);
+}
+
+.game-container {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .game-board-container {
@@ -58,9 +117,28 @@ body {
   align-items: center;
   width: 60px;
   height: 60px;
-  border: 1px solid var(--white);
+  border: 1px solid rgb(59, 59, 59);
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+}
+
+.scaleTile {
+  animation: scaleTile 0.6s;
+}
+
+@keyframes scaleTile {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+    border: 1px solid rgb(216, 213, 213);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 .keyboard-container {
@@ -80,8 +158,8 @@ body {
   cursor: pointer;
 }
 
-.keyboard-container button:focus {
-  background-color: var(--gray);
+.keyboard-container button:hover {
+  background-color: var(--lightGray);
 }
 
 .keyboard-container button:nth-child(11) {
@@ -93,12 +171,35 @@ body {
   width: 68px;
 }
 
+.greenClr,
+.yellowClr,
+.greyClr {
+  animation: flip 1.2s;
+}
+
 .greyClr {
   background-color: var(--darkGray) !important;
+  cursor: not-allowed !important;
 }
+
 .yellowClr {
   background-color: var(--yellow) !important;
 }
+
 .greenClr {
   background-color: var(--green) !important;
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateX(0deg);
+  }
+
+  50% {
+    transform: rotateX(90deg);
+  }
+
+  100% {
+    transform: rotateX(0deg);
+  }
 }
