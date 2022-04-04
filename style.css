@@ -213,6 +213,7 @@ hr {
   }
   .keyboard-container {
     width: 411px;
+    margin-bottom: 10px;
   }
 
   .keyboard-container button {
@@ -236,6 +237,7 @@ hr {
   }
   .keyboard-container {
     width: 280px;
+    margin-bottom: 10px;
   }
 
   .keyboard-container button {
