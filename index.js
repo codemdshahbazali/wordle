@@ -576,7 +576,7 @@ gameInstruction.addEventListener('click', () => {
 
 const selectRandomWinWord = () => {
   let index = Math.floor(Math.random() * 511);
-  //   console.log('Win Word ', listOfWords[index].toLowerCase());
+  console.log('Win Word ', listOfWords[index].toLowerCase());
   return listOfWords[index];
 };
 
@@ -620,7 +620,6 @@ const createKeyBoard = () => {
 createKeyBoard();
 
 document.addEventListener('keydown', (e) => {
-  console.log('Hi', e.key);
   if (
     e.key.length == 1 ||
     e.key.toLowerCase() == 'enter' ||
@@ -690,6 +689,7 @@ const checkWord = async () => {
             gameMessage.textContent = winWord.toUpperCase();
             gameMessage.classList.add('animate-message');
             myModal.show();
+            modelText.classList.add('text-success');
             modelText.textContent = 'Congratulations. Play Again !!!';
             rowNumber++;
             colNumber = 0;
@@ -719,15 +719,18 @@ const checkWord = async () => {
           }
 
           if (i === 4) {
-            rowNumber++;
-            colNumber = 0;
-            if (rowNumber === 6) {
-              gameMessage.textContent = winWord.toUpperCase();
-              gameMessage.classList.add('animate-message');
-              myModal.show();
-              modelText.textContent = 'Game Over. Try Again!!!';
-              return;
-            }
+            setTimeout(() => {
+              rowNumber++;
+              colNumber = 0;
+              if (rowNumber === 6) {
+                gameMessage.textContent = winWord.toUpperCase();
+                gameMessage.classList.add('animate-message');
+                myModal.show();
+                modelText.classList.add('text-danger');
+                modelText.textContent = 'Game Over. Try Again!!!';
+                return;
+              }
+            }, i * 200);
           }
         }, i * 300);
       }
