@@ -204,3 +204,20 @@ hr {
     transform: rotateX(0deg);
   }
 }
+
+@media screen and (max-width: 580px) {
+  .keyboard-container {
+    width: 411px;
+  }
+
+  .keyboard-container button {
+    width: 32px;
+    height: 45px;
+    margin: 4px;
+  }
+
+  .keyboard-container button:nth-child(20),
+  .keyboard-container button:nth-child(28) {
+    width: 54px;
+  }
+}
