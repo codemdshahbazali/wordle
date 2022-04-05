@@ -231,10 +231,11 @@ hr {
   }
 
   .tile {
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     font-size: 1.2rem;
   }
+
   .keyboard-container {
     width: 411px;
     margin-bottom: 10px;
@@ -242,7 +243,7 @@ hr {
 
   .keyboard-container button {
     width: 32px;
-    height: 45px;
+    height: 50px;
     margin: 4px;
     font-size: 0.8rem;
   }
@@ -279,8 +280,8 @@ hr {
   }
 
   .tile {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     font-size: 1.2rem;
   }
   .keyboard-container {
@@ -290,7 +291,7 @@ hr {
 
   .keyboard-container button {
     width: 23px;
-    height: 40px;
+    height: 45px;
     margin: 2px;
     font-size: 0.8rem;
   }
