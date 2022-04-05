@@ -206,6 +206,30 @@ hr {
 }
 
 @media (min-width: 410px) and (max-width: 580px) {
+  .game-title h1 {
+    font-size: 1.7rem;
+  }
+
+  .game-title i {
+    font-size: 1.7rem;
+  }
+
+  #exampleModalLabel,
+  #modalText,
+  #staticBackdropLabel,
+  .modal-footer .btn.closeBtn {
+    font-size: 1.3rem;
+  }
+
+  .modal-body li,
+  .modal-footer .btn-lg {
+    font-size: 1rem;
+  }
+
+  .game-message {
+    font-size: 1.2rem;
+  }
+
   .tile {
     width: 50px;
     height: 50px;
@@ -230,6 +254,30 @@ hr {
 }
 
 @media (max-width: 410px) {
+  .game-title h1 {
+    font-size: 1.7rem;
+  }
+
+  .game-title i {
+    font-size: 1.7rem;
+  }
+
+  #exampleModalLabel,
+  #modalText,
+  #staticBackdropLabel,
+  .modal-footer .btn.closeBtn {
+    font-size: 1rem;
+  }
+
+  .modal-body li,
+  .modal-footer .btn-lg {
+    font-size: 1rem;
+  }
+
+  .game-message {
+    font-size: 1rem;
+  }
+
   .tile {
     width: 40px;
     height: 40px;
